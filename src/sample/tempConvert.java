@@ -44,8 +44,28 @@ public class tempConvert extends Application {
         Label results = new Label();
 
 
+        HBox scales = new HBox();
+        scales.setAlignment(Pos.CENTER);
+        scales.setSpacing(10);
+        scales.getChildren().add(from);
+        scales.getChildren().add(pickScaleFrom);
+        scales.getChildren().add(to);
+        scales.getChildren().add(pickScaleTo);
+        //or use: scales.getChildren().addAll(from, pickScaleFrom, to, pickScaleTo);
 
+        VBox root = new VBox();
+        root.setAlignment(Pos.CENTER);
+        root.setSpacing(10);
+        root.getChildren().add(input);
+        root.getChildren().add(scales);
+        root.getChildren().add(convertButton);
+        root.getChildren().add(results);
+        //or use: scales.getChildren().addAll(input, scales, convertButton, result);
 
+        Scene scene = new Scene(root, 400, 400);
+        stage.setTitle("Temperature Converter");
+        stage.setScene(scene);
+        stage.show();
 
     }
 
